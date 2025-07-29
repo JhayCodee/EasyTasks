@@ -1,1 +1,23 @@
-<app-header></app-header>
+<app-header />
+
+<main>
+  <ul id="usuarios">
+    <li>
+      <app-user
+        [avatar]="users[0].avatar"
+        [nombre]="users[0].nombre"
+        [id]="users[0].id"
+        (selection)="onUserSelected($event)"
+      />
+    </li>
+    <li>
+      <app-user
+        [avatar]="users[1].avatar"
+        [nombre]="users[1].nombre"
+        [id]="users[1].id"
+        (selection)="onUserSelected($event)"
+      />
+    </li>
+  </ul>
+  TAREAS DE USUARIOS
+</main>
