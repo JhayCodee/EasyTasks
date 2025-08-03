@@ -41,4 +41,8 @@ export class TasksComponent {
   get userTasksSelected() {
     return this.fakeTasks.filter((task) => task.idUsuario === this.userId);
   }
+
+  onTaskCompleted(id: string) {
+    this.fakeTasks = this.fakeTasks.filter((task) => task.id !== id);
+  }
 }
