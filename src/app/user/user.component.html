@@ -1,10 +1,6 @@
 <div>
-    <button (click)="onClickUser()">
-        <img
-            [src]="imagePath"
-            [alt]="avatar"
-            class="avatar"
-        >
-        <span>{{nombre}}</span>
-    </button>
+  <button [class.active]="selectedUser" (click)="onClickUser()">
+    <img [src]="imagePath" [alt]="user.avatar" class="avatar" />
+    <span>{{ user.nombre }}</span>
+  </button>
 </div>

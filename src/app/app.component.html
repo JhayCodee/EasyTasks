@@ -2,22 +2,20 @@
 
 <main>
   <ul id="usuarios">
+    @for (user of users; track user.id) {
     <li>
       <app-user
-        [avatar]="users[0].avatar"
-        [nombre]="users[0].nombre"
-        [id]="users[0].id"
+        [user]="user"
+        [selectedUser]="user.id === userSelectedId"
         (selection)="onUserSelected($event)"
       />
     </li>
-    <li>
-      <app-user
-        [avatar]="users[1].avatar"
-        [nombre]="users[1].nombre"
-        [id]="users[1].id"
-        (selection)="onUserSelected($event)"
-      />
-    </li>
+    }
   </ul>
-  TAREAS DE USUARIOS
+
+  @if (userSelected) {
+  <app-tasks [nombre]="userSelected.nombre" [userId]="userSelected.id" />
+  } @else {
+  <p>No hay usuario seleccionado</p>
+  }
 </main>
