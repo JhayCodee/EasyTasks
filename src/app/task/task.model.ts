@@ -5,3 +5,9 @@ export interface Task {
   resumen: string;
   expira: string;
 }
+
+export interface NewTask {
+  titulo: string;
+  resumen: string;
+  expira: string;
+}
