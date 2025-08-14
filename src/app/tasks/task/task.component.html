@@ -1,10 +1,12 @@
 <app-card>
-  <article>
-    <h2>{{ task.titulo }}</h2>
-    <time>{{ task.expira | date : "fullDate" }}</time>
-    <p>{{ task.resumen }}</p>
-    <p class="acciones">
-      <button (click)="onTaskCompleted()">Terminada</button>
-    </p>
+  <article class="task">
+    <header class="task-header">
+      <h3 class="task-title">{{ task.titulo }}</h3>
+      <time class="task-date">{{ task.expira | date : 'fullDate' }}</time>
+    </header>
+    <p class="task-summary">{{ task.resumen }}</p>
+    <footer class="task-actions">
+      <button class="btn" (click)="onTaskCompleted()">Marcar como terminada</button>
+    </footer>
   </article>
 </app-card>

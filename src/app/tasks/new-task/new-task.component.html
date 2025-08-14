@@ -1,30 +1,25 @@
-<div class="fondo" (click)="onCancel()"></div>
-<dialog open>
+<div class="overlay" (click)="onCancel()"></div>
+<dialog class="modal" open>
   <h2>Agregar Tarea</h2>
   <form (ngSubmit)="onSubmit()">
-    <p>
+    <p class="field">
       <label for="titulo">Titulo</label>
-      <input type="text" id="titulo" name="titulo" [(ngModel)]="title" />
+      <input class="control" type="text" id="titulo" name="titulo" [(ngModel)]="title" />
     </p>
 
-    <p>
+    <p class="field">
       <label for="resumen">Resumen</label>
-      <textarea
-        id="resumen"
-        rows="5"
-        name="resumen"
-        [(ngModel)]="summary"
-      ></textarea>
+      <textarea class="control" id="resumen" rows="5" name="resumen" [(ngModel)]="summary"></textarea>
     </p>
 
-    <p>
+    <p class="field">
       <label for="expira">Fecha Límite</label>
-      <input type="date" id="expira" name="expira" [(ngModel)]="dueDate" />
+      <input class="control" type="date" id="expira" name="expira" [(ngModel)]="dueDate" />
     </p>
 
     <p class="acciones">
-      <button (click)="onCancel()" type="button">Cancelar</button>
-      <button type="submit">Crear</button>
+      <button class="btn" (click)="onCancel()" type="button">Cancelar</button>
+      <button class="btn btn-primary" type="submit">Crear</button>
     </p>
   </form>
 </dialog>

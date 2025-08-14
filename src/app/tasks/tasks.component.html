@@ -1,20 +1,23 @@
 @if (isAddingNewTask) {
-<app-new-task (close)="onCloseNewTask()" [userId]="userId" />
+  <app-new-task (close)="onCloseNewTask()" [userId]="userId" />
 }
 
-<section class="tareas">
-  <header>
-    <h2>Tareas de {{ nombre }}</h2>
-    <menu>
-      <button (click)="onTaskAdded()">Agregar Tarea</button>
+<section class="tareas card">
+  <header class="header">
+    <div class="title">
+      <h2>Tareas de {{ nombre }}</h2>
+      <p class="subtitle">Crea, revisa y completa tus pendientes</p>
+    </div>
+    <menu class="menu">
+      <button class="btn btn-primary" (click)="onTaskAdded()">Agregar Tarea</button>
     </menu>
   </header>
 
-  <ul>
+  <ul class="list">
     @for (task of userTasksSelected; track task.id) {
-    <li>
-      <app-task [task]="task" />
-    </li>
+      <li>
+        <app-task [task]="task" />
+      </li>
     }
   </ul>
 </section>

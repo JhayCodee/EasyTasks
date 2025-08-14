@@ -1,21 +1,31 @@
 <app-header />
 
-<main>
-  <ul id="usuarios">
-    @for (user of users; track user.id) {
-    <li>
-      <app-user
-        [user]="user"
-        [selectedUser]="user.id === userSelectedId"
-        (selection)="onUserSelected($event)"
-      />
-    </li>
-    }
-  </ul>
+<main class="layout">
+  <aside class="sidebar card elev-hover">
+    <header class="sidebar-header">
+      <h2>Usuarios</h2>
+    </header>
+    <ul id="usuarios" class="users">
+      @for (user of users; track user.id) {
+      <li>
+        <app-user
+          [user]="user"
+          [selectedUser]="user.id === userSelectedId"
+          (selection)="onUserSelected($event)"
+        />
+      </li>
+      }
+    </ul>
+  </aside>
 
-  @if (userSelected) {
-  <app-tasks [nombre]="userSelected.nombre" [userId]="userSelected.id" />
-  } @else {
-  <p>No hay usuario seleccionado</p>
-  }
+  <section class="content">
+    @if (userSelected) {
+      <app-tasks [nombre]="userSelected.nombre" [userId]="userSelected.id" />
+    } @else {
+      <div class="empty card elev-hover">
+        <h2>Selecciona un usuario</h2>
+        <p>Elige un usuario para ver y gestionar sus tareas.</p>
+      </div>
+    }
+  </section>
 </main>
