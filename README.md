@@ -1,27 +1,59 @@
-# Essentials
+<p align="center">
+  <img src="src/assets/listado-tareas-logo.png" alt="Easy Tasks" width="72" />
+</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
+# Easy Tasks — Gestor de tareas minimalista (Angular 18)
 
-## Development server
+![Angular](https://img.shields.io/badge/Angular-18-EA3323?logo=angular&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript&logoColor=white)
+![Status](https://img.shields.io/badge/estado-en%20desarrollo-4f8cff)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Pequeña aplicación de tareas construida con Angular 18 y componentes standalone.
 
-## Code scaffolding
+## 🚀 Demo local
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+npm install
+npm start
+```
 
-## Build
+##### abrir en http://localhost:4200
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## ✨ Características
 
-## Running unit tests
+- ✅ Componentes standalone (sin módulos) y control de estado simple
+- ✅ Persistencia en `localStorage`
+- ✅ Diseño responsive
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🧩 Estructura
 
-## Running end-to-end tests
+```text
+src/
+  app/
+    header/                # Encabezado sticky con marca
+    shared/card/           # Contenedor visual reutilizable
+    user/                  # Item de usuario (selector en sidebar)
+    tasks/
+      new-task/            # Modal para crear tarea
+      task/                # Tarjeta de tarea
+      tasks.component.*    # Listado + acciones
+    app.component.*        # Layout principal (sidebar + contenido)
+  assets/                  # Logo + avatares
+  styles.css               # Variables, utilidades y base global
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 🛠️ Scripts
 
-## Further help
+- `npm start`: inicia el servidor de desarrollo
+- `npm run build`: compila para producción
+- `npm test`: ejecuta pruebas unitarias (si están configuradas)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## 🏗️ Tecnologías
+
+- Angular 18 (componentes standalone)
+- TypeScript 5
+- CSS moderno con variables y utilidades propias
+
+## 🤝 Contribuir
+
+¡Sugerencias, issues y PRs son bienvenidos! Mantén un estilo de código claro y consistente.
